@@ -1,6 +1,7 @@
 package ru.borisov.crud_mvc.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 
@@ -22,10 +23,11 @@ public class User {
     private String surname;
 
     @Column(name = "age")
-    @Min(value = 0, message = "Age must be more than 0")
+    @Min(value = 1, message = "Age must be more than 0")
     private int age;
 
     @NotEmpty(message = "Please fill email")
+    @Email
     private String email;
 
     public User() {
